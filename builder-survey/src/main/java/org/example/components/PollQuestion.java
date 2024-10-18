@@ -4,8 +4,8 @@ import java.util.List;
 
 public class PollQuestion {
     private final String title;
-    private int minAnswers;
-    private int maxAnswers;
+    private final int minAnswers;
+    private final int maxAnswers;
     private final List<String> answers;
 
     public PollQuestion(String title, int minAnswers, int maxAnswers, List<String> answers) {
@@ -27,15 +27,7 @@ public class PollQuestion {
         return minAnswers;
     }
 
-    public void setMinAnswers(int minAnswers) {
-        this.minAnswers = minAnswers;
-    }
-
     public int getMaxAnswers() {
         return maxAnswers;
-    }
-
-    public void setMaxAnswers(int maxAnswers) {
-        this.maxAnswers = maxAnswers;
     }
 }

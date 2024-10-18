@@ -3,15 +3,15 @@ package org.example.components;
 import java.util.List;
 
 public class PollQuestionResponse {
-    private PollQuestion pollQuestion;
+    private final PollQuestion pollQuestion;
     private List<String> selectedVariants;
+
+    public PollQuestionResponse(PollQuestion pollQuestion) {
+        this.pollQuestion = pollQuestion;
+    }
 
     public PollQuestion getPollQuestion() {
         return pollQuestion;
-    }
-
-    public void setPollQuestion(PollQuestion pollQuestion) {
-        this.pollQuestion = pollQuestion;
     }
 
     public List<String> getSelectedVariants() {

@@ -3,15 +3,15 @@ package org.example.components;
 import java.util.List;
 
 public class PollFillingData {
-    private String username;
+    private final String username;
     private List<PollQuestionResponse> responses;
+
+    public PollFillingData(String username) {
+        this.username = username;
+    }
 
     public String getUsername() {
         return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public List<PollQuestionResponse> getResponses() {
