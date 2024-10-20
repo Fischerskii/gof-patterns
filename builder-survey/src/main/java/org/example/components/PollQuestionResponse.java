@@ -2,23 +2,14 @@ package org.example.components;
 
 import java.util.List;
 
-public class PollQuestionResponse {
-    private final PollQuestion pollQuestion;
-    private List<String> selectedVariants;
-
-    public PollQuestionResponse(PollQuestion pollQuestion) {
-        this.pollQuestion = pollQuestion;
-    }
-
-    public PollQuestion getPollQuestion() {
-        return pollQuestion;
-    }
-
-    public List<String> getSelectedVariants() {
-        return selectedVariants;
-    }
-
-    public void setSelectedVariants(List<String> selectedVariants) {
-        this.selectedVariants = selectedVariants;
-    }
+/**
+ * Ответ на вопрос опроса
+ *
+ * @param pollQuestion     вопрос
+ * @param selectedVariants выбранные варианты ответа
+ */
+public record PollQuestionResponse(
+        PollQuestion pollQuestion,
+        List<String> selectedVariants
+) {
 }
