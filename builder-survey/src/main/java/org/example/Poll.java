@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Poll {
-    private String pollName;
-    private List<PollQuestion> pollQuestionList;
+    private final String pollName;
+    private final List<PollQuestion> pollQuestionList;
 
     public Poll(String pollName, List<PollQuestion> pollQuestionList) {
         this.pollName = pollName;
@@ -24,15 +24,7 @@ public class Poll {
         return pollName;
     }
 
-    public void setPollName(String pollName) {
-        this.pollName = pollName;
-    }
-
     public List<PollQuestion> getPollQuestionList() {
         return pollQuestionList;
-    }
-
-    public void setPollQuestionList(List<PollQuestion> pollQuestionList) {
-        this.pollQuestionList = pollQuestionList;
     }
 }
