@@ -18,12 +18,14 @@ public class App {
                 .withPollName("Programming Survey")
                 .yesNoPollQuestion("Are you programmer?")
                 .oneVariantPollQuestion("How many years of programming experience do y ou have?")
+                .withMaxAnswers(1)
                 .withAnswerVariant("0-1 years")
                 .withAnswerVariant("1-3 years")
                 .withAnswerVariant("3-5 years")
                 .withAnswerVariant("5+ years")
                 .and()
                 .oneVariantPollQuestion("What is your favorite programming language?")
+                .withMaxAnswers(1)
                 .withAnswerVariant("Java")
                 .withAnswerVariant("Python")
                 .withAnswerVariant("C++")
@@ -53,7 +55,6 @@ public class App {
         AnalyzeStrategy leastFrequentAnswerStrategy = new LeastFrequentAnswerStrategy();
         AnalyzeStrategy mostFrequentAnswerStrategy = new MostFrequentAnswerStrategy();
 
-//        PollAnalyzer analyzer = new PollAnalyzerProxy(fullCountStrategy);
         PollAnalyzer analyzer = new PollAnalyzer(fullCountStrategy);
         analyzer.analyzePoll(pollFillingDataList);
 

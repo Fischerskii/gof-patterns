@@ -43,12 +43,22 @@ public class PollAnalyzer {
 
                 for (String selectedVariant : selectedVariants) {
                     Map<String, Integer> selectedVariantsCount = questionStatistics.selectedVariantsCount();
-                    selectedVariantsCount.put(selectedVariant, selectedVariantsCount.getOrDefault(selectedVariant, 1) + 1);
+
+                    selectedVariantsCount.put(
+                            selectedVariant,
+                            selectedVariantsCount.containsKey(selectedVariant)
+                                    ? selectedVariantsCount.get(selectedVariant) + 1
+                                    : 1
+                    );
                 }
 
                 String userLogin = pollFillingData.userLogin();
                 Map<String, Integer> userSelectedVariantsCount = questionStatistics.userSelectedVariantsCount();
-                userSelectedVariantsCount.put(userLogin, userSelectedVariantsCount.getOrDefault(userLogin, 1) + 1);
+
+                userSelectedVariantsCount.put(userLogin, userSelectedVariantsCount.containsKey(userLogin)
+                        ? userSelectedVariantsCount.get(userLogin) + 1
+                        : 1
+                );
             }
         }
 
