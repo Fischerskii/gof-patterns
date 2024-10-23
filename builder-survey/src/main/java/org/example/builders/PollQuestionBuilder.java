@@ -31,7 +31,7 @@ public class PollQuestionBuilder {
     }
 
     public PollQuestionBuilder withMaxAnswers(int maxAnswers) {
-        this.minAnswers = maxAnswers;
+        this.maxAnswers = maxAnswers;
         return this;
     }
 
