@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PollAnalyzer {
+public class PollAnalyzer implements Analyzer {
     private AnalyzeStrategy strategy;
 
     public PollAnalyzer(AnalyzeStrategy strategy) {
