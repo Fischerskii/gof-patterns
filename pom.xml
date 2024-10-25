@@ -10,7 +10,7 @@
   <name>gof-patterns</name>
   <url>http://maven.apache.org</url>
     <modules>
-        <module>survey</module>
+        <module>poll</module>
     </modules>
 
     <properties>
