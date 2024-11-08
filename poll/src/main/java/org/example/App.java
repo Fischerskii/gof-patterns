@@ -3,6 +3,7 @@ package org.example;
 import org.example.components.PollFillingData;
 import org.example.components.PollQuestion;
 import org.example.components.PollQuestionResponse;
+import org.example.proxy.PollAnalyzerProxy;
 import org.example.strategy.AnalyzeStrategy;
 import org.example.strategy.impl.FullCountStrategy;
 import org.example.strategy.impl.LeastFrequentAnswerStrategy;
@@ -55,7 +56,9 @@ public class App {
         AnalyzeStrategy leastFrequentAnswerStrategy = new LeastFrequentAnswerStrategy();
         AnalyzeStrategy mostFrequentAnswerStrategy = new MostFrequentAnswerStrategy();
 
-        PollAnalyzer analyzer = new PollAnalyzer(fullCountStrategy);
+        PollAnalyzer delegateAnalyzer = new PollAnalyzer(fullCountStrategy);
+        Analyzer analyzer = new PollAnalyzerProxy(delegateAnalyzer);
+
         analyzer.analyzePoll(pollFillingDataList);
 
         analyzer.changeAnalyzeStrategy(leastFrequentAnswerStrategy);

@@ -7,10 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>builder-survey</artifactId>
+    <artifactId>poll</artifactId>
     <packaging>jar</packaging>
 
-    <name>builder-survey</name>
+    <name>poll</name>
     <url>http://maven.apache.org</url>
 
     <properties>
